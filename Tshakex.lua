@@ -246,9 +246,9 @@ Status = "المطور الاساسي"
 elseif tonumber(user_id) == tonumber(bot_id) then  
 Status = "انا البوت :) "
 elseif redis:sismember(bot_id.."Tshakex:Developer:Bot1", user_id) then
-Status = redis:get(bot_id.."Tshakex:Developer:Bot:Reply"..chat_id) or "مطور  🎖"  
+Status = redis:get(bot_id.."Tshakex:Developer:Bot:Reply"..chat_id) or "مطور ثانوي"  
 elseif redis:sismember(bot_id.."Tshakex:Developer:Bot", user_id) then
-Status = redis:get(bot_id.."Tshakex:Developer:Bot:Reply"..chat_id) or "مطور  "  
+Status = redis:get(bot_id.."Tshakex:Developer:Bot:Reply"..chat_id) or "مطور "  
 elseif redis:sismember(bot_id.."Tshakex:President:Group"..chat_id, user_id) then
 Status = redis:get(bot_id.."Tshakex:President:Group:Reply"..chat_id) or "المنشئ اساسي"
 elseif redis:sismember(bot_id..'Tshakex:Constructor:Group'..chat_id, user_id) then
@@ -2732,20 +2732,9 @@ end
 if text == 'السورس' or text == 'سورس' then
 Text = [[
 
-🌐┇ Welcome to Source
-🚩┇[ Tm   -  ”X”](t.me/TshakeX)
- ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-🦁┇[Tshake'X' TEAM](t.me/TshakeX)
+[ NightRang . ](t.me/hlil3)
 
-📂┇[Source Files](t.me/TshakeX_files)
-
-💠┇[Make BoT](t.me/TshakeMakeBOT)
-
-📥┇[YouTube downloader](t.me/bhhBOT)
-
-🔰┇[CHANNEL Tumblr](t.me/DDDDID)
- ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-[📮┇ConnectDeV](t.me/tshakebbot)
+[ . مطور السورس ](t.me/ttat10)
 
 ]]
 send(msg.chat_id_, msg.id_,Text)
@@ -3743,34 +3732,34 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^طرد @(.*)$")}, FunctionStatus, nil)
 end
 
-if text == ("رفع C") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_Bots(msg) then
+if text == ("رفع مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_Bots(msg) then
 function FunctionStatus(arg, result)
 redis:sadd(bot_id.."Tshakex:Developer:Bot", result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","تم ترقيته C في البوت")  
+Send_Options(msg,result.sender_user_id_,"reply","تم ترقيته مطور في البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 end
 
-if text == ("تنزيل C") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_Bots(msg) then
+if text == ("تنزيل مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_Bots(msg) then
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Tshakex:Developer:Bot", result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","تم تنزيله من C")  
+Send_Options(msg,result.sender_user_id_,"reply","تم تنزيله من المطورين")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 end
 
-if text == ("رفع CM") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_Bots(msg) then
+if text == ("رفع مطور ثانوي") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_Bots(msg) then
 function FunctionStatus(arg, result)
 redis:sadd(bot_id.."Tshakex:Developer:Bot1", result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","تم ترقيته CM في البوت")  
+Send_Options(msg,result.sender_user_id_,"reply","تم ترقيته مطور ثانوي في البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 end
 
-if text == ("تنزيل CM") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_Bots(msg) then
+if text == ("تنزيل مطور ثانوي") and tonumber(msg.reply_to_message_id_) ~= 0 and Dev_Bots(msg) then
 function FunctionStatus(arg, result)
 redis:srem(bot_id.."Tshakex:Developer:Bot1", result.sender_user_id_)
-Send_Options(msg,result.sender_user_id_,"reply","تم تنزيله من CM")  
+Send_Options(msg,result.sender_user_id_,"reply","تم تنزيله من المطور الثانوي")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 end
@@ -3892,7 +3881,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 end
 
-if text and text:match("^رفع C @(.*)$") and Dev_Bots(msg) then
+if text and text:match("^رفع مطور @(.*)$") and Dev_Bots(msg) then
 function FunctionStatus(arg, result)
 if (result.id_) then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
@@ -3900,27 +3889,30 @@ send(msg.chat_id_,msg.id_,"عذرا هاذا معرف قناة")
 return false 
 end      
 redis:sadd(bot_id.."Tshakex:Developer:Bot", result.id_)
-Send_Options(msg,result.id_,"reply","تم ترقيته C في البوت")  
+Send_Options(msg,result.id_,"reply","تم ترقيته مطور في البوت")  
 else
 send(msg.chat_id_, msg.id_,"المعرف غلط ")
 end
 end
-tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^رفع C @(.*)$")}, FunctionStatus, nil)
+tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^رفع مطور @(.*)$")}, FunctionStatus, nil)
 end
 
-if text and text:match("^تنزيل C @(.*)$") and Dev_Bots(msg) then
+if text and text:match("^تنزيل مطور @(.*)$") and Dev_Bots(msg) then
 function FunctionStatus(arg, result)
 if (result.id_) then
 redis:srem(bot_id.."Tshakex:Developer:Bot", result.id_)
-Send_Options(msg,result.id_,"reply","تم تنزيله من C")  
+Send_Options(msg,result.id_,"reply","تم تنزيله من مطور")  
 else
 send(msg.chat_id_, msg.id_,"المعرف غلط ")
 end
 end
-tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تنزيل C @(.*)$")}, FunctionStatus, nil)
+tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^تنزيل مطور @(.*)$")}, FunctionStatus, nil)
 end
-
-if text and text:match("^رفع CM @(.*)$") and Dev_Bots(msg) then
+if text == 'تحديث السورس' and Dev_Bots(msg) then
+download_to_file('https://raw.githubusercontent.com/TEAMTshakeXX/Tshake/master/Tshakex.lua','Tshakex.lua') 
+send(msg.chat_id_, msg.id_, "🔂┇تم تحديث السورس وتنزيل اخر تحديث للملفات")
+end
+if text and text:match("^رفع مطور ثانوي @(.*)$") and Dev_Bots(msg) then
 function FunctionStatus(arg, result)
 if (result.id_) then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
@@ -3928,19 +3920,19 @@ send(msg.chat_id_,msg.id_,"عذرا هاذا معرف قناة")
 return false 
 end      
 redis:sadd(bot_id.."Tshakex:Developer:Bot1", result.id_)
-Send_Options(msg,result.id_,"reply","تم ترقيته CM في البوت")  
+Send_Options(msg,result.id_,"reply","تم ترقيته مطور ثانوي في البوت")  
 else
 send(msg.chat_id_, msg.id_,"المعرف غلط ")
 end
 end
-tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^رفع CM @(.*)$")}, FunctionStatus, nil)
+tdcli_function ({ID = "SearchPublicChat",username_ = text:match("^رفع مطور ثانوي @(.*)$")}, FunctionStatus, nil)
 end
 
-if text and text:match("^تنزيل CM @(.*)$") and Dev_Bots(msg) then
+if text and text:match("^تنزيل مطور ثانوي @(.*)$") and Dev_Bots(msg) then
 function FunctionStatus(arg, result)
 if (result.id_) then
 redis:srem(bot_id.."Tshakex:Developer:Bot1", result.id_)
-Send_Options(msg,result.id_,"reply","تم تنزيله من CM")  
+Send_Options(msg,result.id_,"reply","تم تنزيله من مطور ثانوي")  
 else
 send(msg.chat_id_, msg.id_,"المعرف غلط ")
 end
@@ -4178,7 +4170,7 @@ end
 end,nil)
 end
 end
-if text == ("قائمة C") and DeveloperBot(msg) then
+if text == ("قائمة المطورين") and DeveloperBot(msg) then
 local list = redis:smembers(bot_id.."Tshakex:Developer:Bot")
 if #list == 0 then
 return send(msg.chat_id_, msg.id_, "• لا يوجد مطور  ")
@@ -4198,7 +4190,7 @@ end
 end,nil)
 end
 end
-if text == ("قائمة CM") and DeveloperBot1(msg) then
+if text == ("قائمة المطورين الثانوين") and DeveloperBot1(msg) then
 local list = redis:smembers(bot_id.."Tshakex:Developer:Bot1")
 if #list == 0 then
 return send(msg.chat_id_, msg.id_, "• لا يوجد مطور  ")
@@ -4442,11 +4434,11 @@ if text == ("مسح المكتومين عام") and DeveloperBot1(msg) or text =
 redis:del(bot_id.."Tshakex:Silence:User:Groups")
 send(msg.chat_id_, msg.id_, "• تم مسح المكتومين عام من البوت")
 end
-if text == ("مسح قائمة C") and Dev_Bots(msg) then
+if text == ("مسح قائمة المطورين") and Dev_Bots(msg) then
 redis:del(bot_id.."Tshakex:Developer:Bot")
 send(msg.chat_id_, msg.id_, "•  تم مسح قائمة C من البوت  ")
 end
-if text == ("مسح قائمة CM") and Dev_Bots(msg) then
+if text == ("مسح قائمة المطورين الثانوين") and Dev_Bots(msg) then
 redis:del(bot_id.."Tshakex:Developer:Bot1")
 send(msg.chat_id_, msg.id_, "•  تم مسح قائمة C من البوت  ")
 end
@@ -7519,20 +7511,10 @@ return false end
 end
 if text == 'السورس' or text == 'سورس' then
 Text = [[
-🌐┇ Welcome to Source
-🚩┇[ Tm   -  ”X”](t.me/TshakeX)
- ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-🦁┇[Tshake'X' TEAM](t.me/TshakeX)
 
-📂┇[Source Files](t.me/TshakeX_files)
+[NightRang Source](t.me/hlil3)
 
-💠┇[Make BoT](t.me/TshakeMakeBOT)
-
-📥┇[YouTube downloader](t.me/bhhBOT)
-
-🔰┇[CHANNEL Tumblr](t.me/DDDDID)
- ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-[📮┇ConnectDeV](t.me/tshakebbot)
+[مطور السورس ](t.me/ttat10)
 
 ]]
 send(msg.chat_id_, msg.id_,Text)
