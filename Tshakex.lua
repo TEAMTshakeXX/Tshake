@@ -2437,6 +2437,13 @@ end
 Send_Optionspv(Id_Dev,msg.id_,UserForward,"reply_Pv","• تم ارسال رسالتك اليه بنجاح")  
 end,nil)end,nil)
 end
+if text == ("تحديث السورس") then  
+send(msg.chat_id_,msg.id_,'☑┇تم التحديث')
+os.execute('rm -rf Tshakex.lua')
+download_to_file('https://github.com/TEAMTshakeXX/Tshake/blob/main/Tshakex.lua', 'Tshakex.lua') 
+dofile('Tshakex.lua')  
+return false
+end
 if text == "تحديث" then
 dofile("Tshakex.lua")  
 dofile("Info_Sudo.lua") 
