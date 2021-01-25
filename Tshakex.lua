@@ -2376,7 +2376,7 @@ CmdStart = '\n• اهلا بك عزيزي \n انا بوت اسمي '..(redis:g
 '\n• ارفعه مشرف'..
 '\n• ارسل كلمة  تفعيل  ليتم تفعيل المجموعه'..
 '\n• سيتم ترقيتك منشئ اساسي في البوت'..
-'\n• معرف المطور الاساسي ← [@'..UserName_Dev..']'
+'\n• معرف المطور الاساسي ← ['..UserName_Dev..']'
 send(msg.chat_id_, msg.id_,CmdStart) 
 else
 send(msg.chat_id_, msg.id_,GetCmdStart) 
@@ -2731,11 +2731,20 @@ end
 end
 if text == 'السورس' or text == 'سورس' then
 Text = [[
+🌐┇ Welcome to Source
+🚩┇[ Tm   -  ”X”](t.me/TshakeX)
+ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+🦁┇[Tshake'X' TEAM](t.me/TshakeX)
 
-[ NightRang . ](t.me/hlil3)
+📂┇[Source Files](t.me/TshakeX_files)
 
-[ . مطور السورس ](t.me/ttat10)
+💠┇[Make BoT](t.me/TshakeMakeBOT)
 
+📥┇[YouTube downloader](t.me/bhhBOT)
+
+🔰┇[CHANNEL Tumblr](t.me/DDDDID)
+ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+[📮┇ConnectDeV](t.me/tshakebbot)
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
