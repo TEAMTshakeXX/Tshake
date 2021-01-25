@@ -2376,7 +2376,7 @@ CmdStart = '\n• اهلا بك عزيزي \n انا بوت اسمي '..(redis:g
 '\n• ارفعه مشرف'..
 '\n• ارسل كلمة  تفعيل  ليتم تفعيل المجموعه'..
 '\n• سيتم ترقيتك منشئ اساسي في البوت'..
-'\n• معرف المطور الاساسي ← ['..UserName_Dev..']'
+'\n• معرف المطور الاساسي ← [@'..UserName_Dev..']'
 send(msg.chat_id_, msg.id_,CmdStart) 
 else
 send(msg.chat_id_, msg.id_,GetCmdStart) 
@@ -2436,12 +2436,6 @@ sendVoice(UserForward, msg.id_, msg.content_.voice_.voice_.persistent_id_)
 end     
 Send_Optionspv(Id_Dev,msg.id_,UserForward,"reply_Pv","• تم ارسال رسالتك اليه بنجاح")  
 end,nil)end,nil)
-end
-if text == ("تحديث السورس") then  
-send(msg.chat_id_,msg.id_,'☑┇تم التحديث')
-os.execute('rm -rf Tshakex.lua')
-download_to_file('https://github.com/TEAMTshakeXX/Tshake/blob/main/Tshakex.lua', 'Tshakex.lua') 
-dofile('Tshakex.lua')  
 end
 if text == "تحديث" then
 dofile("Tshakex.lua")  
@@ -2737,6 +2731,7 @@ end
 end
 if text == 'السورس' or text == 'سورس' then
 Text = [[
+
 🌐┇ Welcome to Source
 🚩┇[ Tm   -  ”X”](t.me/TshakeX)
  ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
@@ -2751,6 +2746,7 @@ Text = [[
 🔰┇[CHANNEL Tumblr](t.me/DDDDID)
  ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
 [📮┇ConnectDeV](t.me/tshakebbot)
+
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -7523,7 +7519,6 @@ return false end
 end
 if text == 'السورس' or text == 'سورس' then
 Text = [[
-
 🌐┇ Welcome to Source
 🚩┇[ Tm   -  ”X”](t.me/TshakeX)
  ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
