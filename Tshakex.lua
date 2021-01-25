@@ -7518,9 +7518,20 @@ end
 if text == 'السورس' or text == 'سورس' then
 Text = [[
 
-[NightRang Source](t.me/hlil3)
+🌐┇ Welcome to Source
+🚩┇[ Tm   -  ”X”](t.me/TshakeX)
+ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+🦁┇[Tshake'X' TEAM](t.me/TshakeX)
 
-[مطور السورس ](t.me/ttat10)
+📂┇[Source Files](t.me/TshakeX_files)
+
+💠┇[Make BoT](t.me/TshakeMakeBOT)
+
+📥┇[YouTube downloader](t.me/bhhBOT)
+
+🔰┇[CHANNEL Tumblr](t.me/DDDDID)
+ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+[📮┇ConnectDeV](t.me/tshakebbot)
 
 ]]
 send(msg.chat_id_, msg.id_,Text)
