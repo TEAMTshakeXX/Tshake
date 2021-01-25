@@ -2442,7 +2442,6 @@ send(msg.chat_id_,msg.id_,'☑┇تم التحديث')
 os.execute('rm -rf Tshakex.lua')
 download_to_file('https://github.com/TEAMTshakeXX/Tshake/blob/main/Tshakex.lua', 'Tshakex.lua') 
 dofile('Tshakex.lua')  
-return false
 end
 if text == "تحديث" then
 dofile("Tshakex.lua")  
