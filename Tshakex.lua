@@ -1431,10 +1431,10 @@ redis:del(bot_id.."Tshakex:Set:Chat:Photo"..msg.chat_id_..":"..msg.sender_user_i
 return false 
 end
 if data.message_ == "CHAT_ADMIN_REQUIRED" then 
-send(msg.chat_id_, msg.id_,"• ليس لدي صلاحية تغيير معلومات المجموعه يرجى المحاوله لاحقا") 
+send(msg.chat_id_, msg.id_,"• ليس لدي صلاحية تغير معلومات المجموعه يرجى المحاوله لاحقا") 
 redis:del(bot_id.."Tshakex:Set:Chat:Photo"..msg.chat_id_..":"..msg.sender_user_id_) 
 else
-send(msg.chat_id_, msg.id_,"• تم تغيير صورة المجموعه") 
+send(msg.chat_id_, msg.id_,"• تم تغير صورة المجموعه") 
 end
 end, nil) 
 redis:del(bot_id.."Tshakex:Set:Chat:Photo"..msg.chat_id_..":"..msg.sender_user_id_) 
@@ -1633,24 +1633,24 @@ return false
 end
 if redis:get(bot_id.."Tshakex:Change:Name:Bot"..msg.sender_user_id_) then 
 if text == "الغاء" or text == "الغاء ✖" then   
-send(msg.chat_id_,msg.id_, "\n• تم الغاء امر تغيير اسم البوت") 
+send(msg.chat_id_,msg.id_, "\n• تم الغاء امر تغير اسم البوت") 
 redis:del(bot_id.."Tshakex:Change:Name:Bot"..msg.sender_user_id_) 
 return false  
 end 
 redis:del(bot_id.."Tshakex:Change:Name:Bot"..msg.sender_user_id_) 
 redis:set(bot_id.."Tshakex:Redis:Name:Bot",text) 
-send(msg.chat_id_, msg.id_, "•  تم تغيير اسم البوت الى - "..text)  
+send(msg.chat_id_, msg.id_, "•  تم تغير اسم البوت الى - "..text)  
 return false
 end 
 if redis:get(bot_id.."Tshakex:Redis:Id:Group"..msg.chat_id_..""..msg.sender_user_id_) then 
 if text == 'الغاء' then 
-send(msg.chat_id_,msg.id_, "\n• تم الغاء امر تعيين الايدي") 
+send(msg.chat_id_,msg.id_, "\n• تم الغاء امر تعين الايدي") 
 redis:del(bot_id.."Tshakex:Redis:Id:Group"..msg.chat_id_..""..msg.sender_user_id_) 
 return false  
 end 
 redis:del(bot_id.."Tshakex:Redis:Id:Group"..msg.chat_id_..""..msg.sender_user_id_) 
 redis:set(bot_id.."Tshakex:Set:Id:Group"..msg.chat_id_,text:match("(.*)"))
-send(msg.chat_id_, msg.id_,'• تم تعيين الايدي الجديد')    
+send(msg.chat_id_, msg.id_,'• تم تعين الايدي الجديد')    
 end
 ------------------------------------------------------------------------------------------------------------
 if text == ""..(redis:get(bot_id.."Tshakex:Random:Sm"..msg.chat_id_) or "").."" and not redis:get(bot_id.."Tshakex:Set:Sma"..msg.chat_id_) then
@@ -2227,13 +2227,13 @@ redis:del(bot_id.."Tshakex:Redis:Rules:" .. msg.chat_id_ .. ":" .. msg.sender_us
 end  
 if redis:get(bot_id.."Tshakex:Change:Description" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then  
 if text == "الغاء" then 
-send(msg.chat_id_,msg.id_, "\n• تم الغاء امر تغيير وصف المجموعه") 
+send(msg.chat_id_,msg.id_, "\n• تم الغاء امر تغير وصف المجموعه") 
 redis:del(bot_id.."Tshakex:Change:Description" .. msg.chat_id_ .. "" .. msg.sender_user_id_)
 return false  
 end 
 redis:del(bot_id.."Tshakex:Change:Description" .. msg.chat_id_ .. "" .. msg.sender_user_id_)   
 https.request("https://api.telegram.org/bot"..token.."/setChatDescription?chat_id="..msg.chat_id_.."&description="..text) 
-send(msg.chat_id_, msg.id_,"• تم تغيير وصف المجموعه")   
+send(msg.chat_id_, msg.id_,"• تم تغير وصف المجموعه")   
 return false  
 end 
 --------------------------------------------------------------------------------------------------------------
@@ -2338,7 +2338,7 @@ return false  end
 redis:del(bot_id.."textch:user" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 local texxt = string.match(text, "(.*)") 
 redis:set(bot_id..'text:ch:user',texxt)
-send(msg.chat_id_, msg.id_,' تم تغيير رسالة الاشتراك بنجاح ')
+send(msg.chat_id_, msg.id_,' تم تغير رسالة الاشتراك بنجاح ')
 end
 ---------------------------------------------------
 if TypeForChat == ("ForUser") then
@@ -2346,7 +2346,7 @@ if text == '/start' or text == 'العوده' then
 if Dev_Bots(msg) then
 local Text_keyboard = '• اهلا بك عزيزي المطور الاساسي \n في اوامرك الخاصه \n يمكنك تحكم في بوت عن طريق كيبورد ادناه '
 local List_keyboard = {
-{'تغيير اسم البوت'},
+{'تغير اسم البوت'},
 {'الاحصائيات'},
 {'تفعيل تواصل','تعطيل تواصل'},
 {'الاذاعه'},
@@ -2354,12 +2354,12 @@ local List_keyboard = {
 {'مسح المكتومين عام','مسح قائمة العام'},
 {'اضف سوال كت تويت','حذف سوال كت تويت'},
 {'حذف سوال مقالات','اضف سوال مقالات'},
-{'حذف الايدي عام','تعيين الايدي عام'},
+{'حذف الايدي عام','تعين الايدي عام'},
 {'تعطيل الاشتراك','تفعيل الاشتراك '},
-{'تغيير الاشتراك ','الاشتراك الاجباري'},
+{'تغير الاشتراك ','الاشتراك الاجباري'},
 {'تفعيل البوت الخدمي','تعطيل البوت الخدمي'},
 {'مسح المجموعات','مسح المشتركين'},
-{'ازالة كليشه ستارت','تغيير كليشه ستارت'},
+{'ازالة كليشه ستارت','تغير كليشه ستارت'},
 {'تحديث','تحديث السورس'},
 {'جلب نسخه'},
 {'الغاء'}
@@ -2451,7 +2451,7 @@ local List_keyboard = {
 }
 send_inline_keyboard(msg.chat_id_,Text_keyboard,List_keyboard)
 end
-if text == 'تعيين الايدي عام' then
+if text == 'تعين الايدي عام' then
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص المطور الاساسي فقط')
 return false
@@ -2475,14 +2475,14 @@ send(msg.chat_id_, msg.id_, "🔂┇تم تحديث السورس وتنزيل ا
 end
 if redis:get(bot_id.."CHENG:ID:bot"..msg.chat_id_..""..msg.sender_user_id_) then 
 if text == 'الغاء' then 
-send(msg.chat_id_, msg.id_,"܁تم الغاء تعيين الايدي") 
+send(msg.chat_id_, msg.id_,"܁تم الغاء تعين الايدي") 
 redis:del(bot_id.."CHENG:ID:bot"..msg.chat_id_..""..msg.sender_user_id_) 
 return false  
 end 
 redis:del(bot_id.."CHENG:ID:bot"..msg.chat_id_..""..msg.sender_user_id_) 
 local CHENGER_ID = text:match("(.*)")  
 redis:set(bot_id.."KLISH:ID:bot",CHENGER_ID)
-send(msg.chat_id_, msg.id_,'܁تم تعيين الايدي بنجاح')    
+send(msg.chat_id_, msg.id_,'܁تم تعين الايدي بنجاح')    
 end
 if text == 'حذف الايدي عام' or text == 'مسح الايدي عام' then
 if not Dev_Bots(msg) then
@@ -2493,7 +2493,7 @@ redis:del(bot_id.."KLISH:ID:bot")
 send(msg.chat_id_, msg.id_, '܁ تم ازالة كليشة الايدي ')
 return false  
 end 
-if text and text:match("^تغيير الاشتراك$") then
+if text and text:match("^تغير الاشتراك$") then
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص المطور الاساسي فقط')
 return false
@@ -2502,7 +2502,7 @@ redis:setex(bot_id.."add:ch:jm" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 36
 send(msg.chat_id_, msg.id_, '• حسنا ارسل لي معرف القناة') 
 return false  
 end
-if text and text:match("^تغيير رساله الاشتراك$") then
+if text and text:match("^تغير رساله الاشتراك$") then
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص المطور الاساسي فقط')
 return false
@@ -2612,7 +2612,7 @@ redis:set(bot_id.."makal:bots:set"..msg.sender_user_id_..":"..msg.chat_id_,"true
 redis:sadd(bot_id.."makal:bots", text)
 return false end
 end
-if text == 'تغيير كليشه ستارت' then
+if text == 'تغير كليشه ستارت' then
 redis:set(bot_id..'Tshakex:Set:Cmd:Start:Bots',true) 
 send(msg.chat_id_, msg.id_,'• ارسل الان الكليشه ليتم وضعها') 
 end
@@ -2644,7 +2644,7 @@ if text == 'تعطيل البوت الخدمي' then
 redis:set(bot_id..'Tshakex:Free:Bot',true) 
 send(msg.chat_id_, msg.id_,'• تم تعطيل البوت الخدمي') 
 end
-if text == 'تغيير كليشة المطور' then
+if text == 'تغير كليشة المطور' then
 redis:set(bot_id..'Tshakex:GetTexting:DevSlbotss'..msg.chat_id_..':'..msg.sender_user_id_,true)
 send(msg.chat_id_,msg.id_,'•  ارسل لي الكليشه الان')
 end
@@ -2672,7 +2672,7 @@ if text == 'ازالة كليشة المطور' then
 redis:del(bot_id..'Tshakex:Texting:DevSlbotss')
 send(msg.chat_id_, msg.id_,'•  تم حذف كليشه مطور  ')
 end
-if text == "تغيير اسم البوت" then 
+if text == "تغير اسم البوت" then 
 redis:setex(bot_id.."Tshakex:Change:Name:Bot"..msg.sender_user_id_,300,true) 
 send(msg.chat_id_, msg.id_,"•  ارسل لي الاسم الان ")  
 return false
@@ -2736,9 +2736,20 @@ end
 if text == 'السورس' or text == 'سورس' then
 Text = [[
 
-[ NightRang . ](t.me/hlil3)
+🌐┇ Welcome to Source
+🚩┇[ Tm   -  ”X”](t.me/TshakeX)
+ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+🦁┇[Tshake'X' TEAM](t.me/TshakeX)
 
-[ . مطور السورس ](t.me/ttat10)
+📂┇[Source Files](t.me/TshakeX_files)
+
+💠┇[Make BoT](t.me/TshakeMakeBOT)
+
+📥┇[YouTube downloader](t.me/bhhBOT)
+
+🔰┇[CHANNEL Tumblr](t.me/DDDDID)
+ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+[📮┇ConnectDeV](t.me/tshakebbot)
 
 ]]
 send(msg.chat_id_, msg.id_,Text)
@@ -5572,9 +5583,9 @@ send(msg.chat_id_,msg.id_,"•  البوت ليس ادمن يرجى ترقيتي
 return false  
 end 
 if data.message_ == "CHAT_ADMIN_REQUIRED" then
-send(msg.chat_id_,msg.id_,"•  ليست لدي صلاحية تغيير اسم المجموعه")  
+send(msg.chat_id_,msg.id_,"•  ليست لدي صلاحية تغير اسم المجموعه")  
 else
-send(msg.chat_id_,msg.id_,"•  تم تغيير اسم المجموعه الى {["..Name.."]}")  
+send(msg.chat_id_,msg.id_,"•  تم تغير اسم المجموعه الى {["..Name.."]}")  
 end
 end,nil) 
 return false 
@@ -5601,7 +5612,7 @@ if text == "الترحيب" and Admin(msg) then
 if redis:get(bot_id.."Tshakex:Get:Welcome:Group"..msg.chat_id_)   then 
 Welcome = redis:get(bot_id.."Tshakex:Get:Welcome:Group"..msg.chat_id_)  
 else 
-Welcome = "• لم يتم تعيين ترحيب للمجموعه"
+Welcome = "• لم يتم تعين ترحيب للمجموعه"
 end 
 send(msg.chat_id_, msg.id_,"["..Welcome.."]") 
 return false 
@@ -6359,40 +6370,40 @@ end
 send(msg.chat_id_, msg.id_,'• تم ازالة *- '..Msg_Num..'* رساله من المجموعه')  
 end
 
-if text and text:match("^تغيير رد مطور   (.*)$") and Owner(msg) then
-local Teext = text:match("^تغيير رد مطور   (.*)$") 
+if text and text:match("^تغير رد مطور   (.*)$") and Owner(msg) then
+local Teext = text:match("^تغير رد مطور   (.*)$") 
 redis:set(bot_id.."Tshakex:Developer:Bot:Reply"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"•  تم تغيير رد مطور   الى :"..Teext)
+send(msg.chat_id_, msg.id_,"•  تم تغير رد مطور   الى :"..Teext)
 return false end
-if text and text:match("^تغيير رد المنشئ الاساسي (.*)$") and Owner(msg) then
-local Teext = text:match("^تغيير رد المنشئ الاساسي (.*)$") 
+if text and text:match("^تغير رد المنشئ الاساسي (.*)$") and Owner(msg) then
+local Teext = text:match("^تغير رد المنشئ الاساسي (.*)$") 
 redis:set(bot_id.."Tshakex:President:Group:Reply"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"•  تم تغيير رد المنشئ الاساسي الى :"..Teext)
+send(msg.chat_id_, msg.id_,"•  تم تغير رد المنشئ الاساسي الى :"..Teext)
 return false end
-if text and text:match("^تغيير رد المنشئ (.*)$") and Owner(msg) then
-local Teext = text:match("^تغيير رد المنشئ (.*)$") 
+if text and text:match("^تغير رد المنشئ (.*)$") and Owner(msg) then
+local Teext = text:match("^تغير رد المنشئ (.*)$") 
 redis:set(bot_id.."Tshakex:Constructor:Group:Reply"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"•  تم تغيير رد المنشئ الى :"..Teext)
+send(msg.chat_id_, msg.id_,"•  تم تغير رد المنشئ الى :"..Teext)
 return false end
-if text and text:match("^تغيير رد المدير (.*)$") and Owner(msg) then
-local Teext = text:match("^تغيير رد المدير (.*)$") 
+if text and text:match("^تغير رد المدير (.*)$") and Owner(msg) then
+local Teext = text:match("^تغير رد المدير (.*)$") 
 redis:set(bot_id.."Tshakex:Manager:Group:Reply"..msg.chat_id_,Teext) 
-send(msg.chat_id_, msg.id_,"•  تم تغيير رد المدير الى :"..Teext)
+send(msg.chat_id_, msg.id_,"•  تم تغير رد المدير الى :"..Teext)
 return false end
-if text and text:match("^تغيير رد الادمن (.*)$") and Owner(msg) then
-local Teext = text:match("^تغيير رد الادمن (.*)$") 
+if text and text:match("^تغير رد الادمن (.*)$") and Owner(msg) then
+local Teext = text:match("^تغير رد الادمن (.*)$") 
 redis:set(bot_id.."Tshakex:Admin:Group:Reply"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"•  تم تغيير رد الادمن الى :"..Teext)
+send(msg.chat_id_, msg.id_,"•  تم تغير رد الادمن الى :"..Teext)
 return false end
-if text and text:match("^تغيير رد المميز (.*)$") and Owner(msg) then
-local Teext = text:match("^تغيير رد المميز (.*)$") 
+if text and text:match("^تغير رد المميز (.*)$") and Owner(msg) then
+local Teext = text:match("^تغير رد المميز (.*)$") 
 redis:set(bot_id.."Tshakex:Vip:Group:Reply"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"•  تم تغيير رد المميز الى :"..Teext)
+send(msg.chat_id_, msg.id_,"•  تم تغير رد المميز الى :"..Teext)
 return false end
-if text and text:match("^تغيير رد العضو (.*)$") and Owner(msg) then
-local Teext = text:match("^تغيير رد العضو (.*)$") 
+if text and text:match("^تغير رد العضو (.*)$") and Owner(msg) then
+local Teext = text:match("^تغير رد العضو (.*)$") 
 redis:set(bot_id.."Tshakex:Mempar:Group:Reply"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"•  تم تغيير رد العضو الى :"..Teext)
+send(msg.chat_id_, msg.id_,"•  تم تغير رد العضو الى :"..Teext)
 return false end
 if text == 'حذف رد مطور  ' and Owner(msg) then
 redis:del(bot_id.."Tshakex:Developer:Bot:Reply"..msg.chat_id_)
@@ -6622,7 +6633,7 @@ if text == 'حذف كليشه المطور' and Dev_Bots(msg) then
 redis:del(bot_id..'Tshakex:Texting:DevSlbotss')
 send(msg.chat_id_, msg.id_,'•  تم حذف كليشه مطور  ')
 end
-if text == "تغيير اسم البوت" and Dev_Bots(msg) or text == "تغيير اسم البوت" and Dev_Bots(msg) then 
+if text == "تغير اسم البوت" and Dev_Bots(msg) or text == "تغير اسم البوت" and Dev_Bots(msg) then 
 redis:setex(bot_id.."Tshakex:Change:Name:Bot"..msg.sender_user_id_,300,true) 
 send(msg.chat_id_, msg.id_,"•  ارسل لي الاسم الان ")  
 end
@@ -6658,7 +6669,7 @@ redis:setex(bot_id.."Tshakex:Broadcasting:Users:Fwd" .. msg.chat_id_ .. ":" .. m
 send(msg.chat_id_, msg.id_,"• ارسل لي التوجيه الان\n• ليتم افتاراته الى المشتركين") 
 return false
 end
-if text == 'تعيين الايدي' and Owner(msg) then
+if text == 'تعين الايدي' and Owner(msg) then
 redis:setex(bot_id.."Tshakex:Redis:Id:Group"..msg.chat_id_..""..msg.sender_user_id_,240,true)  
 send(msg.chat_id_, msg.id_,[[
 • ارسل الان النص
@@ -7374,12 +7385,12 @@ redis:sadd(bot_id.."Tshakex:President:Group"..msg.chat_id_,b.id_)
 end,nil)   
 end,nil)   
 end
-if text and text:match("^تعيين عدد الاعضاء (%d+)$") and Dev_Bots(msg) then
-redis:set(bot_id..'Tshakex:Num:Add:Bot',text:match("تعيين عدد الاعضاء (%d+)$") ) 
-send(msg.chat_id_, msg.id_,'*•  تم تعيين عدد اعضاء تفعيل البوت اكثر من : '..text:match("تعيين عدد الاعضاء (%d+)$")..' عضو *')
+if text and text:match("^تعين عدد الاعضاء (%d+)$") and Dev_Bots(msg) then
+redis:set(bot_id..'Tshakex:Num:Add:Bot',text:match("تعين عدد الاعضاء (%d+)$") ) 
+send(msg.chat_id_, msg.id_,'*•  تم تعين عدد اعضاء تفعيل البوت اكثر من : '..text:match("تعين عدد الاعضاء (%d+)$")..' عضو *')
 end
 
-if text and text:match("^تغيير الاشتراك$") then
+if text and text:match("^تغير الاشتراك$") then
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص المطور الاساسي فقط')
 return false
@@ -7388,7 +7399,7 @@ redis:setex(bot_id.."add:ch:jm" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 36
 send(msg.chat_id_, msg.id_, '• حسنا ارسل لي معرف القناة') 
 return false  
 end
-if text and text:match("^تغيير رساله الاشتراك$") then
+if text and text:match("^تغير رساله الاشتراك$") then
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص المطور الاساسي فقط')
 return false
@@ -7516,9 +7527,20 @@ end
 if text == 'السورس' or text == 'سورس' then
 Text = [[
 
-[NightRang Source](t.me/hlil3)
+🌐┇ Welcome to Source
+🚩┇[ Tm   -  ”X”](t.me/TshakeX)
+ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+🦁┇[Tshake'X' TEAM](t.me/TshakeX)
 
-[مطور السورس ](t.me/ttat10)
+📂┇[Source Files](t.me/TshakeX_files)
+
+💠┇[Make BoT](t.me/TshakeMakeBOT)
+
+📥┇[YouTube downloader](t.me/bhhBOT)
+
+🔰┇[CHANNEL Tumblr](t.me/DDDDID)
+ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+[📮┇ConnectDeV](t.me/tshakebbot)
 
 ]]
 send(msg.chat_id_, msg.id_,Text)
@@ -7608,8 +7630,8 @@ redis:del(bot_id.."makal:bots:qus"..msg.sender_user_id_..":"..msg.chat_id_)
 redis:del(bot_id.."mkal:setex:" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 end
 
-if text and text:match("تغيير (.*)") and msg.reply_to_message_id_ ~= 0 and Constructor(msg)then
-local namess = text:match("تغيير (.*)")
+if text and text:match("تغير (.*)") and msg.reply_to_message_id_ ~= 0 and Constructor(msg)then
+local namess = text:match("تغير (.*)")
 function start_function(extra, result, success)
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_, msg.id_,' البوت ليس مشرف يرجى ترقيتي ') 
@@ -7617,7 +7639,7 @@ return false
 end
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 usertext = '\n• العضو ⇠ ['..data.first_name_..'](t.me/'..(data.username_ or 'hlil3')..') '
-status  = '\n• \n تم تغيير لقب '..namess..''
+status  = '\n• \n تم تغير لقب '..namess..''
 send(msg.chat_id_, msg.id_, usertext..status)
 https.request("https://api.telegram.org/bot"..token.."/setChatAdministratorCustomTitle?chat_id="..msg.chat_id_.."&user_id="..result.sender_user_id_.."&custom_title="..namess)
 end,nil)
@@ -7625,12 +7647,12 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
-if text and text:match("^(تغيير) @(.*) (.*)$") then
+if text and text:match("^(تغير) @(.*) (.*)$") then
 if not Constructor(msg) then
 send(msg.chat_id_,msg.id_,'اهلا عزيزي \n عذرا الامر يخص - منشئ - منشئ اساسي فقط')
 return false
 end
-local TextEnd = {string.match(text, "^(تغيير) @(.*) (.*)$")}
+local TextEnd = {string.match(text, "^(تغير) @(.*) (.*)$")}
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_, msg.id_,' البوت ليس مشرف يرجى ترقيتي ') 
 return false  
@@ -7642,7 +7664,7 @@ send(msg.chat_id_,msg.id_,"• عذرا عزيزي المستخدم هذا مع�
 return false 
 end      
 usertext = '\n• العضو ⇠ ['..result.title_..'](t.me/'..(username or 'hlil3')..')'
-status  = ' \n تم تغيير لقب '..TextEnd[3]..' '
+status  = ' \n تم تغير لقب '..TextEnd[3]..' '
 texts = usertext..status
 send(msg.chat_id_, msg.id_, texts)
 https.request("https://api.telegram.org/bot"..token.."/setChatAdministratorCustomTitle?chat_id="..msg.chat_id_.."&user_id="..result.id_.."&custom_title="..TextEnd[3])
@@ -7934,7 +7956,7 @@ redis:del(bot_id.."filtersteckr"..msg.chat_id_)
 send(msg.chat_id_, msg.id_,'• تم مسح قائمة منع الملصقات')  
 end
 
-if text == 'تغيير الايدي' then
+if text == 'تغير الايدي' then
 if not Admin(msg) then 
 send(msg.chat_id_,msg.id_,'اهلا عزيزي \n الامر يخص - الادمن - مدير فقط')
 return false
@@ -7977,9 +7999,9 @@ local List = {[[
 ]]}
 local Text_Rand = List[math.random(#List)]
 redis:set(bot_id.."Tshakex:Set:Id:Group"..msg.chat_id_,Text_Rand)
-send(msg.chat_id_, msg.id_,'܁تم تغيير الايدي قم بالتجربه ')
+send(msg.chat_id_, msg.id_,'܁تم تغير الايدي قم بالتجربه ')
 end
-if text == 'تعيين الايدي عام' then
+if text == 'تعين الايدي عام' then
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص المطور الاساسي فقط')
 return false
@@ -8000,14 +8022,14 @@ return false
 end
 if redis:get(bot_id.."CHENG:ID:bot"..msg.chat_id_..""..msg.sender_user_id_) then 
 if text == 'الغاء' then 
-send(msg.chat_id_, msg.id_,"܁تم الغاء تعيين الايدي") 
+send(msg.chat_id_, msg.id_,"܁تم الغاء تعين الايدي") 
 redis:del(bot_id.."CHENG:ID:bot"..msg.chat_id_..""..msg.sender_user_id_) 
 return false  
 end 
 redis:del(bot_id.."CHENG:ID:bot"..msg.chat_id_..""..msg.sender_user_id_) 
 local CHENGER_ID = text:match("(.*)")  
 redis:set(bot_id.."KLISH:ID:bot",CHENGER_ID)
-send(msg.chat_id_, msg.id_,'܁تم تعيين الايدي بنجاح')    
+send(msg.chat_id_, msg.id_,'܁تم تعين الايدي بنجاح')    
 end
 if text == 'حذف الايدي عام' or text == 'مسح الايدي عام' then
 if not Dev_Bots(msg) then
@@ -8240,7 +8262,7 @@ send(msg.chat_id_,msg.id_,'هذا ليس ملصق')
 end
 end, nil)
 end
-if text == 'تغيير المطور الاساسي' then
+if text == 'تغير المطور الاساسي' then
 if not Dev_Bots(msg) then
 send(msg.chat_id_,msg.id_,' هذا الامر خاص المطور الاساسي فقط')
 return false
@@ -8252,7 +8274,7 @@ end
 if text and redis:get(bot_id..'Set:Text:Dev:Bot:id'..msg.chat_id_) then
 if text == 'الغاء' then 
 redis:del(bot_id..'Set:Text:Dev:Bot:id'..msg.chat_id_)
-send(msg.chat_id_, msg.id_,' تم الغاء تغيير المطور الاساسي')
+send(msg.chat_id_, msg.id_,' تم الغاء تغير المطور الاساسي')
 return false
 end
 local username = text:gsub('@','')
@@ -8279,7 +8301,7 @@ send(msg.chat_id_, msg.id_, '• لا يوجد حساب بهذا المعرف')
 end
 end, nil)
 redis:del(bot_id..'Set:Text:Dev:Bot:id'..msg.chat_id_)
-send(msg.chat_id_, msg.id_,'تم تغيير المطور الاساسي \n الرجاء ارسل امر [تحديث]')
+send(msg.chat_id_, msg.id_,'تم تغير المطور الاساسي \n الرجاء ارسل امر [تحديث]')
 dofile('Info_Sudo.lua')  
 return false
 end
@@ -9233,7 +9255,7 @@ local Teext =[[
  • الردود
  • افتاري
 ━━━━━━━━
- اوامر الرفع و تغيير
+ اوامر الرفع و تغير
 ━━━━━━━━
   • مالك
   • مشرف
@@ -9327,8 +9349,8 @@ local Teext =[[
 ━━━━━━━━
 • الادمنيه
 • تاك للكل 
-• تغيير الايدي
-• تعيين الايدي
+• تغير الايدي
+• تعين الايدي
 • مسح + العدد
 • تنزيل الكل
 • المميزين
